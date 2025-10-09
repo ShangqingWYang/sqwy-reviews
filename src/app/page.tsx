@@ -170,10 +170,10 @@ export default function Page() {
       </section>
 
 {/* CONTACT */}
-<section
+<section>
   id="contact"
   className="relative max-w-4xl mx-auto px-6 py-32 text-center flex flex-col items-center justify-center bg-white overflow-visible"
->
+</section>
    {/* Pulsing Brain */}
    <div className="relative w-full flex justify-center z-0">
     <img
@@ -231,75 +231,74 @@ export default function Page() {
 
  
 
-  {/* Fiery rising embers in front */}
   <div className="absolute inset-0 overflow-visible pointer-events-none z-10">
-    {[...Array(50)].map((_, i) => {
-      const size = 2 + Math.random() * 4; // 2-6px
-      const left = Math.random() * 100;
-      const delay = Math.random() * 3;
-      const duration = 6 + Math.random() * 4; // 6-10s rise
-      const opacity = 0.5 + Math.random() * 0.5;
-      const drift = (Math.random() - 0.5) * 80; // horizontal drift
+  {[...Array(50)].map((_, i) => {
+    const size = 2 + Math.random() * 4; // 2-6px
+    const left = Math.random() * 100;
+    const delay = Math.random() * 3;
+    const duration = 6 + Math.random() * 4; // 6-10s rise
+    const opacity = 0.5 + Math.random() * 0.5;
+    const drift = (Math.random() - 0.5) * 80; // horizontal drift
 
-      return (
-        <div
-          key={i}
-          className="absolute rounded-full"
-          style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            left: `${left}%`,
-            bottom: `0px`,
-            opacity,
-            background: 'radial-gradient(circle, #ffeb3b, #ff9800)',
-            filter: `blur(${size / 2}px) drop-shadow(0 0 ${size}px #ffcc33)`,
-            animation: `emberRise ${duration}s ease-in-out ${delay}s infinite`,
-            '--drift': `${drift}px`,
-          }}
-        ></div>
-      );
-    })}
-  </div>
+    return (
+      <div
+        key={i}
+        className="absolute rounded-full"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          left: `${left}%`,
+          bottom: `0px`,
+          opacity,
+          background: 'radial-gradient(circle, #ffeb3b, #ff9800)',
+          filter: `blur(${size / 2}px) drop-shadow(0 0 ${size}px #ffcc33)`,
+          animation: `emberRise ${duration}s ease-in-out ${delay}s infinite`,
+          ['--drift' as any]: `${drift}px`,
+        }}
+      ></div>
+    );
+  })}
+</div>
 
-  <style jsx>{`
-    @keyframes emberRise {
-      0% {
-        bottom: 0px;
-        transform: translateX(0px) scale(1);
-        opacity: 0.5;
-      }
-      25% {
-        bottom: 25%;
-        transform: translateX(calc(var(--drift) / 4)) scale(1.1);
-        opacity: 0.7;
-      }
-      50% {
-        bottom: 50%;
-        transform: translateX(calc(var(--drift) / 2)) scale(1.2);
-        opacity: 0.9;
-      }
-      75% {
-        bottom: 75%;
-        transform: translateX(calc(var(--drift) / 3)) scale(1.1);
-        opacity: 0.7;
-      }
-      100% {
-        bottom: 100%;
-        transform: translateX(0px) scale(1);
-        opacity: 0;
-      }
+<style jsx>{`
+  @keyframes emberRise {
+    0% {
+      bottom: 0px;
+      transform: translateX(0px) scale(1);
+      opacity: 0.5;
     }
-
-    @keyframes shimmer {
-      0% {
-        background-position: -500px 0;
-      }
-      100% {
-        background-position: 500px 0;
-      }
+    25% {
+      bottom: 25%;
+      transform: translateX(calc(var(--drift) / 4)) scale(1.1);
+      opacity: 0.7;
     }
-  `}</style>
-</section>
+    50% {
+      bottom: 50%;
+      transform: translateX(calc(var(--drift) / 2)) scale(1.2);
+      opacity: 0.9;
+    }
+    75% {
+      bottom: 75%;
+      transform: translateX(calc(var(--drift) / 3)) scale(1.1);
+      opacity: 0.7;
+    }
+    100% {
+      bottom: 100%;
+      transform: translateX(0px) scale(1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -500px 0;
+    }
+    100% {
+      background-position: 500px 0;
+    }
+  }
+`}</style>
+
 
 
       {/* FOOTER */}
