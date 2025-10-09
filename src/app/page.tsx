@@ -184,7 +184,7 @@ export default function Page() {
       className="w-full max-w-xl animate-brain-flame object-contain"
     />
   </div>
- 
+  <div className="flex flex-col items-center text-center">
   {/* Reviewer in Chief Title */}
   <h2
     className="text-4xl md:text-5xl font-extrabold mb-4"
@@ -230,6 +230,8 @@ export default function Page() {
   >
     Contact Now
   </a>
+</div>
+
 
  
 
