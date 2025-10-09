@@ -2,7 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional global styles */
+/* Global body font */
 body {
   font-family: system-ui, sans-serif;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn {
+  animation: fadeIn 2s ease-out forwards;
+}
+
+/* Phoenix flames animation */
+@keyframes flames {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-20px) scale(1.05); opacity: 0.5; }
+}
+.animate-flames {
+  animation: flames 2s ease-in-out infinite;
+}
+
+/* Brain pulsing */
+@keyframes brain-flame {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.03); }
+  50% { transform: scale(1.06); }
+  75% { transform: scale(1.03); }
+}
+.animate-brain-flame {
+  animation: brain-flame 2s ease-in-out infinite;
+  display: block;
+  object-fit: contain;
+}
+
+/* Fire subtle flicker */
+@keyframes fire {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  25% { transform: translateY(-5px) scale(1.02); opacity: 0.5; }
+  50% { transform: translateY(-10px) scale(1.05); opacity: 0.7; }
+  75% { transform: translateY(-5px) scale(1.02); opacity: 0.5; }
+}
+.animate-fire {
+  animation: fire 2.5s ease-in-out infinite;
+}
+
+/* Lava subtle movement */
+@keyframes lava-flow {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+.animate-lava {
+  animation: lava-flow 6s ease-in-out infinite alternate;
+}
+
+/* Ember / fiery sparks */
+@keyframes ember {
+  0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-30px) scale(1) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-60px) scale(0.5) rotate(90deg); opacity: 0; }
+}
+.animate-ember {
+  animation: ember 2.5s ease-in-out infinite;
+}
+@keyframes ember {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-160px) scale(0.8);
+    opacity: 0;
+  }
 }
