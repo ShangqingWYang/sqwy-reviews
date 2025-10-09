@@ -170,9 +170,11 @@ export default function Page() {
       </section>
 
 {/* CONTACT */}
-<section>
+<section
   id="contact"
   className="relative max-w-4xl mx-auto px-6 py-32 text-center flex flex-col items-center justify-center bg-white overflow-visible"
+>
+  {/* Your content here */}
 </section>
    {/* Pulsing Brain */}
    <div className="relative w-full flex justify-center z-0">
