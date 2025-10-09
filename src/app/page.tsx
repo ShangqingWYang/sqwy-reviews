@@ -231,8 +231,6 @@ export default function Page() {
     Contact Now
   </a>
 </div>
-
-
  
 
   <div className="absolute inset-0 overflow-visible pointer-events-none z-10">
