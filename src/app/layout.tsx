@@ -2,8 +2,8 @@ import './globals.css';
 import React from 'react';
 
 export const metadata = {
-  title: 'Personal Statement Reviews',
-  description: 'Professional personal statement editing and feedback.',
+  title: 'XySync',
+  description: 'Syncing all healthcare needs',
   icons: {
     icon: '/favicon.ico',
   },
