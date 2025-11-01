@@ -1,41 +1,44 @@
 {
   "compilerOptions": {
+    /* ✅ Standard Next.js TypeScript setup */
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+
+    /* ✅ Needed for Next.js intellisense */
+    "plugins": [{ "name": "next" }],
+
+    /* ✅ Enables @ alias imports (e.g. "@/components/Button") */
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "forceConsistentCasingInFileNames": true
+
+    /* ✅ 🔥 REQUIRED FIX: load React Three Fiber JSX types */
+    "types": ["@react-three/fiber"]
   },
+
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+
+    /* ✅ ensures TS loads your custom .d.ts fixes */
+    "src",
+    "app",
+    "src/r3f-types.d.ts",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+
+  "exclude": ["node_modules"]
 }
