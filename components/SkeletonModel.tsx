@@ -6,7 +6,7 @@ import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 export default function SkeletonModel({ onError }: { onError?: (msg: string) => void }) {
-  const { scene } = useGLTF("/Models/skeleton.glb", true, undefined, (err) => {
+  const { scene } = useGLTF("/models/skeleton.glb", true, undefined, (err) => {
     console.error("❌ GLB failed to load:", err);
     onError?.(err?.message ?? "GLB failed");
   });
@@ -35,4 +35,4 @@ export default function SkeletonModel({ onError }: { onError?: (msg: string) => 
 }
 
 // ✅ Suspense preload (required)
-useGLTF.preload("/Models/skeleton.glb");
+useGLTF.preload("/models/skeleton.glb");
