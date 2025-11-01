@@ -9,7 +9,7 @@ export default function Footer() {
         <Logo size={42} />
 
         <p className="font-medium text-gray-900">
-          © {new Date().getFullYear()} Xysync — All rights reserved.
+          © {new Date().getFullYear()} Xysync — All rights reserved. Built by SY.
         </p>
 
         <div className="flex gap-6 text-indigo-600 font-medium">
